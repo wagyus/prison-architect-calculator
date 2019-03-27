@@ -5,7 +5,6 @@ time.sleep(3)
 print("This is the laundry service calculator. Please have the number of prisoners ready.")
 time.sleep(3)
 
-
 #Begin user input
 p_name = input('Please enter the name of your prison: ')
 prisoners = int(input('Enter the current number of prisoners: '))
@@ -36,3 +35,4 @@ print((p_name), "requires", (laundry_machine_math), "machines for an efficient l
 print((p_name), "requires", (laundry_prisoners), "prisoner workers for an efficient laundry service.")
 print((p_name), "requires", (cleaning_room_workers), "prisoners workers in the cleaning room for an efficient service.")
 print((p_name), "requires", (cleaning_room_build), "cleaning rooms for an efficient service.")
+print("Prison Architect Calculator by @chrismelnyk on GitHub.com")
