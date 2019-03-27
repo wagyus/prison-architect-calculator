@@ -3,9 +3,9 @@ import re
 import sys
 
 print("Welcome to the Prison Architect Calculator.")
-time.sleep(3)
+time.sleep(1)
 print("This is the kitchen/canteen calculator. Please have the number of prisoners ready.")
-time.sleep(3)
+time.sleep(1)
 #Begin user input
 p_name = input('Please enter the name of your prison: ')
 prisoners = int(input('Enter the current number of prisoners: '))
@@ -102,7 +102,7 @@ if meal_variety == "medium":
 if meal_variety == "high":
     variety_cost_before = quantity_cost * 10 - quantity_cost
     variety_cost = round(variety_cost_before, 1)
-    #Daily food cost calculation
+#Daily food cost calculation
 daily_food_cost = (variety_cost + quantity_cost) * (prisoners)
 
 #Print everything after calcs
