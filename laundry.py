@@ -29,6 +29,7 @@ else:
     laundry_machine_math = 1
 
 #Print everything after
+print("--------------------------------------------------------")
 print((p_name), "requires", (calc_baskets), "baskets for an efficient laundry service.")
 print((p_name), "requires", (laundry_iron_math), "ironing boards for an efficient laundry service.")
 print((p_name), "requires", (laundry_machine_math), "machines for an efficient laundry service.")
