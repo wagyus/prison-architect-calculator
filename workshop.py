@@ -25,6 +25,14 @@ squares_real = round(squares_needed, 1)
 profits = work_hours * 25 * press_real
 profits_real = round(profits, 2)
 
+#Fake timer
+run = "Thinking..."
+sec = 0
+if run == "Thinking...":
+    while sec != 5:
+        print("Thinking..."), sec
+        time.sleep(1)
+        sec += 1
 #Print everything after
 print("====================================================================")
 print((p_name), "requires", (squares_real), "squares for a proper workshop area.")

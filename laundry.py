@@ -27,6 +27,15 @@ if prisoners < 25:
 else:
     laundry_machine_math = 1
 
+#Fake timer
+run = "Thinking..."
+sec = 0
+if run == "Thinking...":
+    while sec != 5:
+        print("Thinking..."), sec
+        time.sleep(1)
+        sec += 1
+
 #Print everything after
 print("--------------------------------------------------------")
 print((p_name), "requires", (calc_baskets), "baskets for an efficient laundry service.")

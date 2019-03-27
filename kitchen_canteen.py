@@ -105,6 +105,15 @@ if meal_variety == "high":
 #Daily food cost calculation
 daily_food_cost = (variety_cost + quantity_cost) * (prisoners)
 
+#Fake timer
+run = "Thinking..."
+sec = 0
+if run == "Thinking...":
+    while sec != 5:
+        print("Thinking..."), sec
+        time.sleep(1)
+        sec += 1
+
 #Print everything after calcs
 print("=========================================================")
 print((p_name), "food quantity cost is $",(quantity_cost))
@@ -112,7 +121,7 @@ print((p_name), "food variety cost is $",(variety_cost))
 print((p_name), "daily total food cost is $",(daily_food_cost))
 print("=========================================================")
 print("You selected", int_tables, "for a canteen style.")
-time.sleep(2)
+time.sleep(4)
 print((p_name), "requires", tables_real, " table(s) for proper canteen.")
 print((p_name), "requires", benches, " benches for proper canteen.")
 print((p_name), "requires", serving, " serving tables for proper canteen.")
