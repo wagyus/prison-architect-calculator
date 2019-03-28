@@ -24,6 +24,8 @@ def call_result(label_result, prisoners, work_hours):
     return
 root = tk.Tk()
 root.geometry('400x200+100+200')
+img = tk.Image("photo", file="p_icon.png")
+root.tk.call('wm','iconphoto', root._w, img)
 root.title('Prison Architect Calculator')
 number1 = tk.StringVar()
 number2 = tk.StringVar()
