@@ -1,4 +1,2 @@
 .vscode/
-gui/ServerEditWindow.py
-gui/ServerMainWindow.py
-gui/show_guis.py
+gui/testing/
