@@ -39,6 +39,9 @@ def reset():
 
 def create_window():
     window=tk.Toplevel(root)
+    
+img = tk.Image("photo", file="p_icon.png")
+root.tk.call('wm','iconphoto', root._w, img)
 
 root = tk.Tk()
 root.geometry('800x200+100+200')
