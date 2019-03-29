@@ -1,38 +1,42 @@
 __author__ = 'chrismelnyk'
 import tkinter as tk
 from functools import partial
-work_hours = 0
+from subprocess import call
 
-def call_result1(label_result, prisoners_low, result1):
-    prisoners_intake_low = prisoners_low.get()
+def call_result1(label_result1):
+    prisoners_intake_low = int(low_box.get())
 
     low_safe_calc = prisoners_intake_low / 4
-    low_safe_guards = round(low_safe_calc, 1)
+    low_safe_guards = int(round(low_safe_calc, 1))
 
-    result1 = low_safe_guards
-    label_result.config(text="# of baskets is %d" % result1)
+    result1 = str(low_safe_guards)
+    label_result1.config(text="Number of guards for low security prisoners is: %d" % low_safe_guards)
     return
 
-def call_result2(label_result, prisoners_med, result2):
-    prisoners_intake_med = int((prisoners_med.get()))
+def call_result2(label_result2):
+    prisoners_intake_med = int(med_box.get())
 
-    med_safe_calc = ((prisoners_intake_med/4))
-    med_safe_guards = round(med_safe_calc, 1)
+    med_safe_calc = ((prisoners_intake_med / 3))
+    med_safe_guards =int(round(med_safe_calc, 1))
 
     result2 = med_safe_guards
-    label_result.config(text=(result2))
+    label_result2.config(text="Number of guards for medium security prisoners is: %d" % med_safe_guards)
     return
-'''
-def call_result3(label_result, prisoners_high, result3):
-    prisoners_intake_high = int((prisoners_high.get()))
 
-    high_safe_calc = ((prisoners_intake_high/4))
-    high_safe_guards = round(high_safe_calc, 1)
+def call_result3(label_result3):
+    prisoners_intake_high = int(high_box.get())
+
+    high_safe_calc = ((prisoners_intake_high / 2))
+    high_safe_guards =int(round(high_safe_calc, 1))
 
     result3 = high_safe_guards
-    label_result.config(text="# of baskets is %d" % high_safe_guards)
+    label_result3.config(text="Number of guards for high security prisoners is: %d" % high_safe_guards)
     return
-'''
+
+reset2 = 'safety_in_numbersgui.py'
+def reset():
+    call(['python', reset2] )
+
 def create_window():
     window=tk.Toplevel(root)
 
@@ -40,39 +44,38 @@ root = tk.Tk()
 root.geometry('800x200+100+200')
 root.title('Safety in Numbers Calculator')
 
-number1 = tk.IntVar()
-number2 = tk.StringVar()
-#number3 = tk.StringVar()
+n1 = tk.StringVar()
+n2 = tk.StringVar()
 
-labelTitle = tk.Label(root, text="Safety In Numbers Config").grid(row=0, column=2)
+labelResult1 = tk.Label(root, text="")
+labelResult1.grid(row=1, column=7)
 
-labelprisoners_low = tk.Label(root, text="# of low security prisoners").grid(row=1, column=0)
-labelprisoners_med = tk.Label(root, text="# of medium security prisoners").grid(row=2, column=0)
-labelprisoners_high = tk.Label(root, text="# of high security prisoners").grid(row=3, column=0)
+labelResult2 = tk.Label(root, text="")
+labelResult2.grid(row=2, column=7)
 
-labelResult = tk.Label(root)
-labelResult.grid(row=2, column=2)
+labelResult3 = tk.Label(root, text="")
+labelResult3.grid(row=3, column=7)
 
-prisoners_low = tk.Spinbox(root, textvariable=number1, from_=0, to=100).grid(row=1, column=2)
+low_box = tk.Entry(root)
+low_box.insert(0, 'Enter Low #')
+low_box.grid(row=1, column=5, sticky='NS')
 
-#prisoners_low = tk.Entry(root, textvariable=number1).grid(row=1, column=2)
-prisoners_med = tk.Entry(root, textvariable=number2).grid(row=2, column=2)
-#entryprisoners_high = tk.Entry(root, textvariable=number3).grid(row=3, column=2)
+med_box = tk.Entry(root)
+med_box.insert(0, 'Enter Med #')
+med_box.grid(row=2, column=5, sticky='NS')
 
-img = tk.Image("photo", file="p_icon.png")
-root.tk.call('wm','iconphoto', root._w, img)
-call_result1 = partial(call_result1, labelResult, number1, number2)
-call_result2 = partial(call_result2, labelResult, number1, number2)
-#call_result3 = partial(call_result3, labelResult, number1, number2)
-#call_result4 = partial(call_result4, labelResult, number1, number2)
-#call_result5 = partial(call_result5, labelResult, number1, number2)
-#call_result6 = partial(call_result6, labelResult, number1, number2)
+high_box = tk.Entry(root)
+high_box.insert(0, 'Enter High #')
+high_box.grid(row=3, column=5, sticky='NS')
 
-b1 = tk.Button(root, text="Calculate Low Guards", command=call_result1).grid(row=3, column=0)
-b2 = tk.Button(root, text="Calculate Medium Guards", command=call_result2).grid(row=4, column=0)
-#b3 = tk.Button(root, text="Calculate High Guards", command=call_result3).grid(row=5, column=0)
-#b4 = tk.Button(root, text="Calculate Working Laundry Prisoners", command=call_result4).grid(row=6, column=0)
-#b5 = tk.Button(root, text="Calculate Working Cleaning Room Prisoners", command=call_result5).grid(row=6, column=0)
-#b6 = tk.Button(root, text="Calculate Working Cleaning Size", command=call_result6).grid(row=7, column=0)
+call_result1 = partial(call_result1, labelResult1)
+call_result2 = partial(call_result2, labelResult2)
+call_result3 = partial(call_result3, labelResult3)
+
+
+b1 = tk.Button(root, text="Calculate Low Guards", command=call_result1).grid(row=1, column=4)
+b2 = tk.Button(root, text="Calculate Medium Guards", command=call_result2).grid(row=2, column=4)
+b3 = tk.Button(root, text="Calculate High Guards", command=call_result3).grid(row=3, column=4)
+b3 = tk.Button(root, text="Reset", command=reset).grid(row=4, column=4)
 
 root.mainloop()
