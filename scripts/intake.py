@@ -13,8 +13,8 @@ prisoners_intake_med = int(input('Enter the number of medium security prisoners 
 prisoners_intake_high = int(input('Enter the number of high security prisoners to intake: '))
 
 while True:
-    intake_config = input("Enter the configuration of intaking prisoners (safety in numbers, balanced, hurt me pleanty, or custom)): ")
-    if intake_config not in ('safety in numbers', 'balanced ', 'hurt me pleanty', 'custom'):
+    intake_config = input("Enter the configuration of intaking prisoners (safety in numbers, balanced or hurt me pleanty)): ")
+    if intake_config not in ('safety in numbers', 'balanced ', 'hurt me pleanty'):
         print("Not a valid choice")
     if intake_config in ('exit'):
         print("Goodbye.")
@@ -24,8 +24,7 @@ while True:
 
 high_armed_guard = 0.10
 
-
-#######SAFETY IN NUMBERS CALCULATION
+###SAFETY IN NUMBERS CALCULATION
 
 #LOW SECURITY INTAKE GUARD CALC
 if prisoners_intake_low >= 0 and intake_config == "safety in numbers":
@@ -55,7 +54,7 @@ if prisoners_intake_high < 0:
     sys.exit()
 
 
-#BALANCED CALCULATION
+###########BALANCED CALCULATION
 #LOW SECURITY INTAKE GUARD CALC
 if prisoners_intake_low >= 0 and intake_config == "balanced":
     #low_safe_guards = 1
@@ -83,7 +82,7 @@ if prisoners_intake_high < 0:
     print("ERROR ENTER A NUMBER GREATER THAN 0")
     sys.exit()
 
-#HURT ME PLEANTY CALCULATION
+####HURT ME PLEANTY CALCULATION
 #LOW SECURITY INTAKE GUARD CALC
 if prisoners_intake_low >= 0 and intake_config == "hurt me pleanty":
     #low_safe_guards = 1
