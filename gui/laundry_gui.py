@@ -156,7 +156,8 @@ labelprisoners= tk.Label(root, text="Enter the # prisoners").grid(row=1, column=
 labelResult = tk.Label(root)
 labelResult.grid(row=2, column=2)
 entryprisoners = tk.Entry(root, textvariable=number1).grid(row=1, column=2)
-
+img = tk.Image("photo", file="p_icon.png")
+root.tk.call('wm','iconphoto', root._w, img)
 
 call_result1 = partial(call_result1, labelResult, number1, number2)
 call_result2 = partial(call_result2, labelResult, number1, number2)
