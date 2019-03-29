@@ -148,7 +148,7 @@ def create_window():
 
 root = tk.Tk()
 root.geometry('800x200+100+200')
-root.title('Prison Architect Calculator')
+root.title('Laundry Calculator')
 number1 = tk.StringVar()
 number2 = tk.StringVar()
 labelTitle = tk.Label(root, text="Laundry Config Calculator").grid(row=0, column=2)
