@@ -111,8 +111,8 @@ if prisoners_intake_high < 0:
     print("ERROR ENTER A NUMBER GREATER THAN 0")
     sys.exit()
 
-print((p_name), "requires", (low_safe_guards), "amount of guards is needed for low security prisoners.")
+print((p_name), "requires", (low_safe_guards), "guards is needed for low security prisoners.")
 
-print((p_name), "requires", (med_safe_guards), "amount of guards is needed for medium security prisoners.")
+print((p_name), "requires", (med_safe_guards), "guards is needed for medium security prisoners.")
 
-print((p_name), "requires", (high_safe_guards), "amount of guards is needed for high security prisoners.")
+print((p_name), "requires", (high_safe_guards), "guards is needed for high security prisoners.")
